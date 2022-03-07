@@ -1,5 +1,5 @@
-const PI:f32 = 3.14;
-static mut GLOBAL:u8 = 1;
+const PI: f32 = 3.14;
+static mut GLOBAL: u8 = 1;
 
 fn main() {
     escopo();
@@ -7,7 +7,6 @@ fn main() {
 
     println!("Soma = {}", soma(2, 2));
     // println!("decimal = {}", decimal);
-    
     condicionais();
     repeticoes();
 
@@ -16,8 +15,7 @@ fn main() {
     errors();
 }
 
-fn soma(a:i32, b:i32) -> i32
-{
+fn soma(a: i32, b: i32) -> i32 {
     println!("{} + {} = {}", a, b, a + b);
     a + b
 }
@@ -43,18 +41,30 @@ fn escopo() {
         println!("variavel_global = {}", GLOBAL);
     }
 
-    let variavel:i32 = 300;
-    println!("variavel = {}, tamanho = {} bytes", variavel, std::mem::size_of_val(&variavel));
-    let variavel:i32 = 301;
-    println!("variavel = {}, tamanho = {} bytes", variavel, std::mem::size_of_val(&variavel));
+    let variavel: i32 = 300;
+    println!(
+        "variavel = {}, tamanho = {} bytes",
+        variavel,
+        std::mem::size_of_val(&variavel)
+    );
+    let variavel: i32 = 301;
+    println!(
+        "variavel = {}, tamanho = {} bytes",
+        variavel,
+        std::mem::size_of_val(&variavel)
+    );
 
-    let decimal:f32 = 2.5;
+    let decimal: f32 = 2.5;
     println!("decimal = {}", decimal);
 
-    let booleana:bool = true;
-    println!("Booleana = {}, Tamanho booleana = {}", booleana, std::mem::size_of_val(&booleana));
+    let booleana: bool = true;
+    println!(
+        "Booleana = {}, Tamanho booleana = {}",
+        booleana,
+        std::mem::size_of_val(&booleana)
+    );
 
-    let letra:char = 'C';
+    let letra: char = 'C';
     println!("Tamanho do char = {}", std::mem::size_of_val(&letra));
 }
 
