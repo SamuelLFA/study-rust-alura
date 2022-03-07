@@ -8,7 +8,7 @@ fn main() {
 }
 
 fn condicionais() {
-    let idade:u8 = 18;
+    let idade: u8 = 18;
     let responsavel_autorizou = true;
     let eh_maior = idade >= 18;
 
@@ -20,7 +20,7 @@ fn condicionais() {
         println!("Não pode entrar na balada")
     }
 
-    let condicao = if eh_maior { "maior"} else { "menor" };
+    let condicao = if eh_maior { "maior" } else { "menor" };
 
     println!("É {} de idade", condicao);
 
@@ -29,16 +29,16 @@ fn condicionais() {
         "PHP" => "Web",
         "Kotlin" => "Android",
         "Python" => "Data Science",
-        _ => "Desconhecido"
+        _ => "Desconhecido",
     };
 
     println!("O proposito da linguagem {} é {}", linguagem, proposito);
 }
 
 fn repeticoes() {
-    let multiplicador:u8 = 5;
+    let multiplicador: u8 = 5;
 
-    let mut contador:u8 = 0;
+    let mut contador: u8 = 0;
 
     while contador < 10 {
         contador += 1;
@@ -47,13 +47,23 @@ fn repeticoes() {
             continue;
         }
 
-        println!("{} x {} = {}", multiplicador, contador, multiplicador * contador);
+        println!(
+            "{} x {} = {}",
+            multiplicador,
+            contador,
+            multiplicador * contador
+        );
     }
 
     contador = 0;
     loop {
         contador += 1;
-        println!("{} x {} = {}", multiplicador, contador, multiplicador * contador);
+        println!(
+            "{} x {} = {}",
+            multiplicador,
+            contador,
+            multiplicador * contador
+        );
 
         if contador == 10 {
             break;
@@ -79,13 +89,17 @@ fn rouba(string: &mut String) {
 
 fn pattern_matching() {
     for x in 1..=20 {
-        println!("{}: {}", x, match x {
-            1 => "Pouco",
-            2 | 3 => "Um pouco",
-            4..=10 => "Um bocado",
-            _ if x % 2 == 0 => "Uma boa quantidade e par",
-            _ => "Muito"
-        });
+        println!(
+            "{}: {}",
+            x,
+            match x {
+                1 => "Pouco",
+                2 | 3 => "Um pouco",
+                4..=10 => "Um bocado",
+                _ if x % 2 == 0 => "Uma boa quantidade e par",
+                _ => "Muito",
+            }
+        );
     }
 }
 
@@ -93,7 +107,7 @@ fn errors() {
     // panic!("Erro proposital");
     match resultado() {
         Ok(s) => println!("{}", s),
-        Err(numero) => println!("{}", numero)
+        Err(numero) => println!("{}", numero),
     };
 }
 
